@@ -1,0 +1,20 @@
+/*顶部搜索栏*/
+#searchForm {
+    margin-left: 10px;
+    height: 150px;
+}
+
+#searchForm .searchParamRoot {
+    height: 80px;
+}
+
+/*顶部搜索栏的参数布局*/
+#searchForm .searchParam {
+    float: left;
+    padding: 10px;
+}
+
+/*顶部搜索栏的按钮布局*/
+#searchForm .searchBtn {
+    height: 50px;
+}

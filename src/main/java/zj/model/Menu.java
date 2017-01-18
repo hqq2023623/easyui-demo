@@ -1,37 +1,99 @@
 package zj.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by lzj on 2017/1/17.
  */
-public class Menu extends ModelBase {
-
+public class Menu extends ModelBase
+{
     private int id;
-
-    private String name;
-
-    private int pid;
-
-    public int getId() {
+    
+    private String text;
+    
+    //"open" or "closed"
+    private String state = "";
+    
+    //指示节点是否被选中
+    private int checked;
+    
+    private Map<String, Object> attributes = new HashMap<>();
+    
+    private List<Menu> children = new ArrayList<>();
+    
+    public void toggleState()
+    {
+        if ("closed".equalsIgnoreCase(this.state))
+        {
+            this.state = "open";
+        }
+        else
+        {
+            this.state = "closed";
+        }
+    }
+    
+    public int getChecked()
+    {
+        return checked;
+    }
+    
+    public void setChecked(int checked)
+    {
+        this.checked = checked;
+    }
+    
+    public String getState()
+    {
+        return state;
+    }
+    
+    public void setState(String state)
+    {
+        this.state = state;
+    }
+    
+    public int getId()
+    {
         return id;
     }
-
-    public void setId(int id) {
+    
+    public void setId(int id)
+    {
         this.id = id;
     }
-
-    public String getName() {
-        return name;
+    
+    public String getText()
+    {
+        return text;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    
+    public void setText(String text)
+    {
+        this.text = text;
     }
-
-    public int getPid() {
-        return pid;
+    
+    public Map<String, Object> getAttributes()
+    {
+        return attributes;
     }
-
-    public void setPid(int pid) {
-        this.pid = pid;
+    
+    public void setAttributes(Map<String, Object> attributes)
+    {
+        this.attributes = attributes;
     }
+    
+    public List<Menu> getChildren()
+    {
+        return children;
+    }
+    
+    public void setChildren(List<Menu> children)
+    {
+        this.children = children;
+    }
+    
 }
