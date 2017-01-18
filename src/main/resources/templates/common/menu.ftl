@@ -1,14 +1,13 @@
 <#--菜单栏-->
-<div data-options="region:'west',title:'West',split:true" style="width:100px;">
+<div data-options="region:'west',title:'West',split:true" style="width:150px;">
     <ul id="menu">
-
     </ul>
-</div>
-
 <#--定义右键菜单-->
-<input type="hidden" id="tempUrl" value=""/>
-<div id="mm" class="easyui-menu" style="width:120px;">
-    <div onclick="newTab()">新标签页打开</div>
+    <input type="hidden" id="tempUrl" value=""/>
+    <div id="mm" class="easyui-menu" style="width:120px;">
+        <div onclick="newTab()">新标签页打开</div>
+    </div>
+
 </div>
 
 <script>

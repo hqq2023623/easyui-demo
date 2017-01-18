@@ -30,6 +30,11 @@
                         <input id="userName" name="userName"/>
                     </div>
 
+                    <div class="searchParam">
+                        <label>创建时间:</label>
+                        <input id="createTime" name="createTime"/>
+                    </div>
+
                 </div>
 
                 <div class="searchBtn">
@@ -113,6 +118,9 @@
 //            $("#userName").combobox('setValue',1);
             $("#userName").combobox('select', '请选择');
 
+            //日期
+            $("#createTime").datetimebox({});
+
 
             //按钮事件
             //点击查询按钮
@@ -122,28 +130,7 @@
 
             //获取提交的参数
             function getSubmitParam() {
-                var originSellerId = $("#originSellerId").combobox('getValue');
-                var destSellerId = $("#destSellerId").combobox('getValue');
-                var number = $("#number").val();
-                var timeBegin = $("#timeBegin").val();
-                var timeEnd = $("#timeEnd").val();
-
-                var param = {};
-                if (number) {
-                    param.number = number;
-                }
-                if (timeBegin) {
-                    param.timeBegin = timeBegin;
-                }
-                if (timeEnd) {
-                    param.timeEnd = timeEnd;
-                }
-                if (originSellerId) {
-                    param.originSellerId = originSellerId;
-                }
-                if (destSellerId) {
-                    param.destSellerId = destSellerId;
-                }
+                var userName = $("#userName").combobox('getValue');
                 return param;
             }
 
