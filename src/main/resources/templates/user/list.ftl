@@ -58,7 +58,12 @@
 
 <#--点击名称弹出对话框-->
 <div id="nameDialog">
-    <h1>nameDialog</h1>
+    <div style="margin-top:50px;margin-left:50px;">
+        <input type="hidden" id="editId"/>
+        name : <input type="text" id="editName" name="name"/>
+    </div>
+
+
 </div>
 
 </body>
@@ -147,10 +152,9 @@
                 $("#userName").combobox('clear');
             });
 
-
             //弹出框
             $('#nameDialog').dialog({
-                title: "nameDialog",
+                title: "编辑",
                 height: 300,
                 width: 400,
                 collapsible: true,
@@ -162,7 +166,10 @@
                         text: '保存',
                         iconCls: 'icon-ok',
                         handler: function () {
-                            console.log('点击保存');
+                            $.post("${request.contextPath}/user/save",{id : $("#editId").val(),name:$("#editName").val()},function (data) {
+                                $.messager.alert("result",data.msg);
+                            });
+                            $("#contentGrid").datagrid("load");
                         }
                     },
                     {
@@ -184,7 +191,8 @@
     //点击名称弹出对话框
     function nameDialog(row) {
         if (row) {
-            console.log(row);
+            $("#editName").val(row.name);
+            $("#editId").val(row.id);
             $("#nameDialog").dialog('open');
         }
     }

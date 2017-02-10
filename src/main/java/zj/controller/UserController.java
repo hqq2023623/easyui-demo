@@ -3,22 +3,26 @@ package zj.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import zj.service.UserService;
 import zj.ui.DataGrid;
+import zj.ui.ResponseResult;
 
 /**
  * Created by lzj on 2017/1/17.
  */
 @Controller
 @RequestMapping("/user")
-public class UserController
+public class UserController extends ControllerBase
 {
     
     @Autowired
@@ -51,6 +55,21 @@ public class UserController
     public Object combobox()
     {
         return userService.listAll(null).getRows();
+    }
+    
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @ResponseBody
+    public Object save(@RequestParam(value = "id", defaultValue = "0") int id, @RequestParam(value = "name") String name)
+    {
+        if (id <= 0)
+        {
+            logger.error("id is wrong, id = " + id);
+            return ResponseResult.fail("更新失败");
+        }
+        Map<String, Object> param = new HashMap<>(2);
+        param.put("id", id);
+        param.put("name", name);
+        return userService.save(param);
     }
     
 }
