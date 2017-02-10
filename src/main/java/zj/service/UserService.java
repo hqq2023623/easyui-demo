@@ -18,6 +18,6 @@ public interface UserService
      */
     DataGrid listAll(Map<String, Object> param);
     
-    ResponseResult save(Map<String, Object> param);
+    ResponseResult update(Map<String, Object> param);
     
 }

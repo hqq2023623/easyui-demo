@@ -3,8 +3,6 @@ package zj.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -69,7 +67,7 @@ public class UserController extends ControllerBase
         Map<String, Object> param = new HashMap<>(2);
         param.put("id", id);
         param.put("name", name);
-        return userService.save(param);
+        return userService.update(param);
     }
     
 }

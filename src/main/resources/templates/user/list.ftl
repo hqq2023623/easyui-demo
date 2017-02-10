@@ -166,7 +166,7 @@
                         text: '保存',
                         iconCls: 'icon-ok',
                         handler: function () {
-                            $.post("${request.contextPath}/user/save",{id : $("#editId").val(),name:$("#editName").val()},function (data) {
+                            $.post("${request.contextPath}/user/update",{id : $("#editId").val(),name:$("#editName").val()},function (data) {
                                 $.messager.alert("result",data.msg);
                             });
                             $("#contentGrid").datagrid("load");

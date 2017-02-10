@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService
     }
     
     @Override
-    public ResponseResult save(Map<String, Object> param)
+    public ResponseResult update(Map<String, Object> param)
     {
         try
         {

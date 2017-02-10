@@ -117,7 +117,7 @@
                         }
                     }, '-',
                     {
-                        text: '保存', iconCls: 'icon-save',
+                        text: '保存', iconCls: 'icon-update',
                         handler: function () {
                             //保存时结束当前编辑的行，自动触发onAfterEdit事件如果要与后台交互可将数据通过Ajax提交后台
                             datagrid.datagrid("endEdit", editRow);
