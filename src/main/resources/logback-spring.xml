@@ -2,11 +2,8 @@
 <configuration debug="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-<<<<<<< HEAD
     <property name="LOG_HOME" value="/logs/ygg/workorder"/>
 
-=======
->>>>>>> b51c8371d29ac128c949fadbdb068160b6717973
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%date [%level] %logger{36} %msg%n
@@ -14,16 +11,8 @@
         </encoder>
     </appender>
 
-<<<<<<< HEAD
     <root level="DEBUG">
-        <appender-ref ref="STDOUT" />
-=======
-    <property name="LOG_HOME" value="/logs/ygg/workorder"/>
-
-
-    <root level="INFO">
         <appender-ref ref="STDOUT"/>
->>>>>>> b51c8371d29ac128c949fadbdb068160b6717973
     </root>
 
 </configuration>
