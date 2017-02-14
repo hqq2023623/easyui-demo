@@ -1,8 +1,5 @@
 package zj.model;
 
-/**
- * Created by lzj on 2017/1/17.
- */
 public class User extends ModelBase {
 
     private int id;

@@ -1,0 +1,21 @@
+/*顶部搜索栏,高度不够会导致 north和center被合并*/
+#searchForm {
+    margin-left: 10px;
+    height: 200px;
+}
+
+#searchForm .searchParamRoot {
+    height: 100px;
+    width: 100%;
+}
+
+/*顶部搜索栏的参数布局*/
+#searchForm .searchParam {
+    float: left;
+    padding: 10px;
+}
+
+/*顶部搜索栏的按钮布局*/
+#searchForm .searchBtn {
+    height: 50px;
+}
