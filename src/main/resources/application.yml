@@ -24,3 +24,6 @@ spring:
               default_encoding: UTF-8
               classic_compatible: true
     order: 1
+db :
+  username : lzj
+  passwd : m123
